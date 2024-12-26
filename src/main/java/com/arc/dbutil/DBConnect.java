@@ -8,9 +8,9 @@ public class DBConnect {
 	private static DBConnect instance;
 	static Connection con = null;
 	
-	private final String jdbcURL  = "jdbc:mysql://localhost:3306/registration_db";
+	private final String jdbcURL  = "jdbc:mysql://localhost:3306/school_db";
 	private final String jdbcUsername = "root";
-    private final String jdbcPassword = "Archer@1234";
+    private final String jdbcPassword = "root";
     
     private DBConnect() throws SQLException {
     	con = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);

@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+   /* General Body Style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Profile Container */
+        .profile-container {
+            width: 80%;
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        h2 {
+            color: #4CAF50;
+            font-size: 1.5em;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        /* Sections */
+        .student-personal-details,
+        .student-educational-details,
+        .student-payment-details {
+            margin-bottom: 30px;
+        }
+
+        /* Paragraphs */
+        p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        p strong {
+            color: #34495e;
+            font-weight: bold;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            padding: 15px;
+            background-color: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+        
+        .container
+        {
+        	width:700px;
+        	border-style : ridge;
+        	border-color : #4CAF50;
+        	border-width : 15px;
+        	margin:20px;
+        	padding:20px;
+        	margin:auto;
+        }
+        
+    form {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+        margin:auto;
+        margin-top:10px;
+    }
+
+    label {
+        font-size: 16px;
+        /* margin-bottom: 10px; */
+        display: block;
+        text-align: left;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    input[type="text"]:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
