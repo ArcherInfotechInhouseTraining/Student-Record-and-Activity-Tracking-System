@@ -7,35 +7,61 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class EnrollmentServices
- */
-@WebServlet("/EnrollmentServices")
+import com.arc.model.EnrollmentModel;
+import com.arc.model.EnrollmentServices;
+
+@WebServlet("/EnrollmentController")
 public class EnrollmentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EnrollmentController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	EnrollmentServices eServices;
+	
+	public void init() {
+		try {
+			eServices = new EnrollmentServices();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
+	}
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String action = request.getParameter("action");
+		System.out.println("action: "+action);
+		
+		try {
+			switch (action) {
+			case "insert":
+				enrollStudent(request,response);
+				break;
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + action);
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	
+	private void enrollStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		String name = request.getParameter("studentName");
+		String email = request.getParameter("studentEmail");
+		String contact = request.getParameter("studentContact");
+//		String schoolId = request.getParameter("studentId");
+		
+		EnrollmentModel emodel = new EnrollmentModel(0,0, name, email, contact) ;
+		eServices.enrollStudent(emodel);
+		request.setAttribute("emodel", emodel);
+		request.getRequestDispatcher("views/admission.jsp").forward(request, response);
 	}
 
 }
