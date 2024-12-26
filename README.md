@@ -14,7 +14,7 @@ The **Student Record and Activity Tracking System** is a web-based application d
 ## Technologies Used
 - **Frontend**: JSP, HTML, CSS, JavaScript
 - **Backend**: Java Servlets
-- **Database**: To be configured
+- **Database**: SQL
 - **Server**: Apache Tomcat
 
 ## Setup Instructions
@@ -70,5 +70,4 @@ The **Student Record and Activity Tracking System** is a web-based application d
 ## Contribution
 Feel free to fork this repository and contribute to its development.
 
-## License
-This project is licensed under [Your License Here].
+
